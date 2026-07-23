@@ -1,0 +1,548 @@
+/* ======================================================
+   ANIMATIONS.CSS
+   Cinematic Animations for Ashu's Birthday Website
+====================================================== */
+
+
+/* ===========================
+   Fade Up
+=========================== */
+
+@keyframes fadeUp {
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* ===========================
+   Fade Down
+=========================== */
+
+@keyframes fadeDown {
+
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* ===========================
+   Fade Left
+=========================== */
+
+@keyframes fadeLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(-60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+
+/* ===========================
+   Fade Right
+=========================== */
+
+@keyframes fadeRight{
+
+    from{
+        opacity:0;
+        transform:translateX(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+
+/* ===========================
+   Fade In
+=========================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+
+/* ===========================
+   Scale In
+=========================== */
+
+@keyframes scaleIn{
+
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* ===========================
+   Hero Zoom
+=========================== */
+
+@keyframes heroZoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+
+
+/* ===========================
+   Floating
+=========================== */
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+
+/* ===========================
+   Glow
+=========================== */
+
+@keyframes glow{
+
+    0%{
+        box-shadow:0 0 0 rgba(212,163,115,.3);
+    }
+
+    50%{
+        box-shadow:0 0 25px rgba(212,163,115,.7);
+    }
+
+    100%{
+        box-shadow:0 0 0 rgba(212,163,115,.3);
+    }
+
+}
+
+
+/* ===========================
+   Heart Beat
+=========================== */
+
+@keyframes heartbeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    20%{
+        transform:scale(1.08);
+    }
+
+    40%{
+        transform:scale(1);
+    }
+
+    60%{
+        transform:scale(1.1);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+
+/* ===========================
+   Shimmer
+=========================== */
+
+@keyframes shimmer{
+
+    0%{
+        background-position:-400px;
+    }
+
+    100%{
+        background-position:400px;
+    }
+
+}
+
+
+/* ===========================
+   Slow Rotation
+=========================== */
+
+@keyframes rotateSlow{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* ===========================
+   Pulse
+=========================== */
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.04);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+
+/* ======================================================
+   HERO ANIMATIONS
+====================================================== */
+
+.hero-content h3{
+
+    animation:fadeDown 1s ease;
+
+}
+
+.hero-content h1{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+.hero-content p{
+
+    animation:fadeUp 1.6s ease;
+
+}
+
+.begin-btn{
+
+    animation:fadeUp 2s ease;
+
+}
+
+#hero{
+
+    animation:heroZoom 18s linear infinite alternate;
+
+}
+
+
+
+/* ======================================================
+   LETTER
+====================================================== */
+
+#letter h2{
+
+    animation:fadeLeft 1s ease;
+
+}
+
+#letter p{
+
+    animation:fadeUp 1.4s ease;
+
+}
+
+
+
+/* ======================================================
+   TIMELINE
+====================================================== */
+
+.timeline-card{
+
+    animation:scaleIn .9s ease;
+
+}
+
+.timeline-card:hover img{
+
+    transform:scale(1.08);
+
+    transition:1s;
+
+}
+
+
+
+/* ======================================================
+   VIDEO
+====================================================== */
+
+video{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+
+
+/* ======================================================
+   ENDING IMAGE
+====================================================== */
+
+#ending img{
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+
+
+/* ======================================================
+   BUTTON
+====================================================== */
+
+.begin-btn:hover{
+
+    animation:pulse .6s;
+
+}
+
+
+
+/* ======================================================
+   MUSIC BUTTON
+====================================================== */
+
+#musicBtn{
+
+    animation:glow 2.5s infinite;
+
+}
+
+
+
+/* ======================================================
+   HEARTS
+====================================================== */
+
+.heart{
+
+    animation:heartbeat 1.6s infinite;
+
+}
+
+
+
+/* ======================================================
+   SHIMMER TEXT
+====================================================== */
+
+.shimmer{
+
+    background:linear-gradient(
+        90deg,
+        #999 25%,
+        white 50%,
+        #999 75%
+    );
+
+    background-size:400px;
+
+    color:transparent;
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    animation:shimmer 2s infinite;
+
+}
+
+
+
+/* ======================================================
+   IMAGE HOVER
+====================================================== */
+
+img{
+
+    transition:.5s;
+
+}
+
+img:hover{
+
+    transform:scale(1.03);
+
+}
+
+
+
+/* ======================================================
+   SMOOTH SECTION TRANSITIONS
+====================================================== */
+
+section{
+
+    animation:fadeIn 1s ease;
+
+}
+
+.petal{
+
+    position:fixed;
+
+    top:-50px;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:
+
+            translateY(110vh)
+
+            rotate(360deg);
+
+    }
+
+}
+
+
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:10px;
+
+    height:18px;
+
+    z-index:99999;
+
+    animation:confettiFall linear forwards;
+
+}
+
+@keyframes confettiFall{
+
+    to{
+
+        transform:
+
+            translateY(110vh)
+
+            rotate(720deg);
+
+    }
+
+}
+
+
+
+.sparkle{
+
+    position:absolute;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:white;
+
+    transform:translate(-50%,-50%);
+
+    animation:spark .7s forwards;
+
+}
+
+@keyframes spark{
+
+    from{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:scale(5);
+
+    }
+
+}
