@@ -104,7 +104,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (music && btn) {
 
-        btn.addEventListener("click", () => {
+        // Attempt autoplay; update button if browser blocks it
+        const playPromise = music.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise
+                .then(() => {
+                    btn.innerHTML = "❚❚ Pause Music";
+                })
+                .catch(() => {
+                    // Autoplay blocked — wait for first user interaction
+                    btn.innerHTML = "♫ Play Music";
+
+                    const startOnInteraction = () => {
+                        music.play();
+                        btn.innerHTML = "❚❚ Pause Music";
+                        document.removeEventListener("click", startOnInteraction);
+                    };
+
+                    document.addEventListener("click", startOnInteraction);
+                });
+
+        }
+
+        btn.addEventListener("click", (e) => {
+
+            e.stopPropagation();
 
             if (music.paused) {
 
